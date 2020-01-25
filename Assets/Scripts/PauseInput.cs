@@ -9,7 +9,7 @@ public class PauseInput : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
+    {//Calling the game object in order to receive pause function
         sprite_Mover = gameObject.GetComponent<Sprite_mover>(); 
     }
 
@@ -20,6 +20,7 @@ public class PauseInput : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P))
         {
             sprite_Mover.enabled = !sprite_Mover.enabled;
+            Debug.Log("P was pressed");//Shows in log when button is pressed
         }
     }
 }

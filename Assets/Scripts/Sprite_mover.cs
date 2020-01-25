@@ -8,6 +8,7 @@ public class Sprite_mover : MonoBehaviour
     private Transform tf;
     //Allow to change speed of object moving
     public float Speed = 1.0f;
+    //Apply flipping of sprite
     public bool flipX;
 
     // Start is called before the first frame update
@@ -24,18 +25,22 @@ public class Sprite_mover : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             tf.position = tf.position + (Vector3.right * Time.deltaTime * Speed); //Vector is moving up in the preset (0,1,0) at slow pace
+            Debug.Log("Key 'D' was pressed");
+            flipX = false;
         }
         //Moving to the Left
         if (Input.GetKey(KeyCode.A))
         {
-            tf.position = tf.position + (Vector3.left * Time.deltaTime * Speed);  
-            
+            tf.position = tf.position + (Vector3.left * Time.deltaTime * Speed);
+            Debug.Log("Key 'A' was pressed");
+            flipX = true;
         }
         //Moving up
         if (Input.GetKey(KeyCode.W))
         {
             tf.position = tf.position + (Vector3.up * Time.deltaTime * Speed);
             Debug.Log("Key 'W' id pressed");
+            
         }
         //Moving down
         if (Input.GetKey(KeyCode.S))
